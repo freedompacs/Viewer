@@ -404,78 +404,78 @@ function PanelStudyBrowser({
 
   const activeDisplaySetInstanceUIDs = viewports.get(activeViewportId)?.displaySetInstanceUIDs;
 
-  return (
-    <>
-      <>
-        <PanelStudyBrowserHeader
-          viewPresets={viewPresets}
-          updateViewPresetValue={updateViewPresetValue}
-          actionIcons={actionIcons}
-          updateActionIconValue={updateActionIconValue}
-        />
-        <Separator
-          orientation="horizontal"
-          className="bg-black"
-          thickness="2px"
-        />
-      </>
-
-      <StudyBrowser
-        tabs={tabs}
-        servicesManager={servicesManager}
-        activeTabName={activeTabName}
-        expandedStudyInstanceUIDs={expandedStudyInstanceUIDs}
-        onClickStudy={_handleStudyClick}
-        onClickTab={clickedTabName => {
-          setActiveTabName(clickedTabName);
-        }}
-        onClickUntrack={onClickUntrack}
-        onClickThumbnail={() => {}}
-        onDoubleClickThumbnail={onDoubleClickThumbnailHandler}
-        activeDisplaySetInstanceUIDs={activeDisplaySetInstanceUIDs}
-        showSettings={actionIcons.find(icon => icon.id === 'settings')?.value}
-        viewPresets={viewPresets}
-        ThumbnailMenuItems={MoreDropdownMenu({
-          commandsManager,
-          servicesManager,
-          menuItemsKey: 'studyBrowser.thumbnailMenuItems',
-        })}
-        StudyMenuItems={MoreDropdownMenu({
-          commandsManager,
-          servicesManager,
-          menuItemsKey: 'studyBrowser.studyMenuItems',
-        })}
-      />
-    </>
-  );
   // return (
-  //   <StudyBrowser
-  //     tabs={tabs}
-  //     servicesManager={servicesManager}
-  //     activeTabName={activeTabName}
-  //     expandedStudyInstanceUIDs={expandedStudyInstanceUIDs}
-  //     onClickStudy={_handleStudyClick}
-  //     onClickTab={clickedTabName => {
-  //       setActiveTabName(clickedTabName);
-  //     }}
-  //     onClickUntrack={onClickUntrack}
-  //     onClickThumbnail={() => {}}
-  //     onDoubleClickThumbnail={onDoubleClickThumbnailHandler}
-  //     activeDisplaySetInstanceUIDs={activeDisplaySetInstanceUIDs}
-  //     showSettings={false}
-  //     viewPresets={viewPresets}
-  //     ThumbnailMenuItems={MoreDropdownMenu({
-  //       commandsManager,
-  //       servicesManager,
-  //       menuItemsKey: 'studyBrowser.thumbnailMenuItems',
-  //     })}
-  //     StudyMenuItems={MoreDropdownMenu({
-  //       commandsManager,
-  //       servicesManager,
-  //       menuItemsKey: 'studyBrowser.studyMenuItems',
-  //     })}
-  //   />
+  //   <>
+  //     <>
+  //       <PanelStudyBrowserHeader
+  //         viewPresets={viewPresets}
+  //         updateViewPresetValue={updateViewPresetValue}
+  //         actionIcons={actionIcons}
+  //         updateActionIconValue={updateActionIconValue}
+  //       />
+  //       <Separator
+  //         orientation="horizontal"
+  //         className="bg-black"
+  //         thickness="2px"
+  //       />
+  //     </>
+
+  //     <StudyBrowser
+  //       tabs={tabs}
+  //       servicesManager={servicesManager}
+  //       activeTabName={activeTabName}
+  //       expandedStudyInstanceUIDs={expandedStudyInstanceUIDs}
+  //       onClickStudy={_handleStudyClick}
+  //       onClickTab={clickedTabName => {
+  //         setActiveTabName(clickedTabName);
+  //       }}
+  //       onClickUntrack={onClickUntrack}
+  //       onClickThumbnail={() => {}}
+  //       onDoubleClickThumbnail={onDoubleClickThumbnailHandler}
+  //       activeDisplaySetInstanceUIDs={activeDisplaySetInstanceUIDs}
+  //       showSettings={actionIcons.find(icon => icon.id === 'settings')?.value}
+  //       viewPresets={viewPresets}
+  //       ThumbnailMenuItems={MoreDropdownMenu({
+  //         commandsManager,
+  //         servicesManager,
+  //         menuItemsKey: 'studyBrowser.thumbnailMenuItems',
+  //       })}
+  //       StudyMenuItems={MoreDropdownMenu({
+  //         commandsManager,
+  //         servicesManager,
+  //         menuItemsKey: 'studyBrowser.studyMenuItems',
+  //       })}
+  //     />
+  //   </>
   // );
+  return (
+    <StudyBrowser
+      tabs={tabs}
+      servicesManager={servicesManager}
+      activeTabName={activeTabName}
+      expandedStudyInstanceUIDs={expandedStudyInstanceUIDs}
+      onClickStudy={_handleStudyClick}
+      onClickTab={clickedTabName => {
+        setActiveTabName(clickedTabName);
+      }}
+      onClickUntrack={onClickUntrack}
+      onClickThumbnail={() => {}}
+      onDoubleClickThumbnail={onDoubleClickThumbnailHandler}
+      activeDisplaySetInstanceUIDs={activeDisplaySetInstanceUIDs}
+      showSettings={false}
+      viewPresets={viewPresets}
+      ThumbnailMenuItems={MoreDropdownMenu({
+        commandsManager,
+        servicesManager,
+        menuItemsKey: 'studyBrowser.thumbnailMenuItems',
+      })}
+      StudyMenuItems={MoreDropdownMenu({
+        commandsManager,
+        servicesManager,
+        menuItemsKey: 'studyBrowser.studyMenuItems',
+      })}
+    />
+  );
 }
 
 export default PanelStudyBrowser;
