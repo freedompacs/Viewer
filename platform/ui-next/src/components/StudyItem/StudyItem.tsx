@@ -115,3 +115,51 @@ StudyItem.propTypes = {
 };
 
 export { StudyItem };
+
+
+
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import { ThumbnailList } from '../ThumbnailList';
+
+// const StudyItem = ({
+//   displaySets,
+//   activeDisplaySetInstanceUIDs,
+//   onClickThumbnail,
+//   onDoubleClickThumbnail,
+//   onClickUntrack,
+//   viewPreset = 'thumbnails',
+//   ThumbnailMenuItems,
+// }: withAppTypes) => {
+//   return (
+//     <ThumbnailList
+//       thumbnails={displaySets}
+//       activeDisplaySetInstanceUIDs={activeDisplaySetInstanceUIDs}
+//       onThumbnailClick={onClickThumbnail}
+//       onThumbnailDoubleClick={onDoubleClickThumbnail}
+//       onClickUntrack={onClickUntrack}
+//       viewPreset={viewPreset}
+//       ThumbnailMenuItems={ThumbnailMenuItems}
+//     />
+//   );
+// };
+
+// StudyItem.propTypes = {
+//   date: PropTypes.string,
+//   description: PropTypes.string,
+//   modalities: PropTypes.string,
+//   numInstances: PropTypes.number,
+//   isActive: PropTypes.bool,
+//   onClick: PropTypes.func,
+//   isExpanded: PropTypes.bool,
+//   displaySets: PropTypes.array,
+//   activeDisplaySetInstanceUIDs: PropTypes.array,
+//   onClickThumbnail: PropTypes.func,
+//   onDoubleClickThumbnail: PropTypes.func,
+//   onClickUntrack: PropTypes.func,
+//   viewPreset: PropTypes.string,
+//   StudyMenuItems: PropTypes.func,
+//   StudyInstanceUID: PropTypes.string,
+// };
+
+// export { StudyItem };

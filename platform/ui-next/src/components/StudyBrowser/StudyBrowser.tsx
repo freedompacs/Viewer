@@ -62,12 +62,12 @@ const StudyBrowser = ({
   return (
     <ScrollArea>
       <div
-        className="bg-bkg-low flex flex-1 flex-col gap-[4px]"
+         className="!bg-[#36454F] flex flex-1 flex-col gap-[4px]"
         data-cy={'studyBrowser-panel'}
       >
         <div className="flex flex-col gap-[4px]">
           {showSettings && (
-            <div className="w-100 bg-bkg-low flex h-[48px] items-center justify-center gap-[10px] px-[8px] py-[10px]">
+           <div className="w-100 !bg-[#36454F] flex h-[48px] items-center justify-center gap-[10px] px-[8px] py-[10px]">
               <>
                 <StudyBrowserViewOptions
                   tabs={tabs}
@@ -138,3 +138,117 @@ StudyBrowser.propTypes = {
 };
 
 export { StudyBrowser };
+
+
+
+// import React from 'react';
+// import PropTypes from 'prop-types';
+
+// import { StudyItem } from '../StudyItem';
+// import { StudyBrowserSort } from '../StudyBrowserSort';
+// import { StudyBrowserViewOptions } from '../StudyBrowserViewOptions';
+// import { ScrollArea } from '../ScrollArea';
+
+// const noop = () => {};
+
+// const StudyBrowser = ({
+//   tabs,
+//   activeTabName,
+//   expandedStudyInstanceUIDs,
+//   onClickTab = noop,
+//   onClickStudy = noop,
+//   onClickThumbnail = noop,
+//   onDoubleClickThumbnail = noop,
+//   onClickUntrack = noop,
+//   activeDisplaySetInstanceUIDs,
+//   servicesManager,
+//   showSettings,
+//   viewPresets,
+//   ThumbnailMenuItems,
+//   StudyMenuItems,
+// }: withAppTypes) => {
+//   const getTabContent = () => {
+//     const tabData = tabs.find(tab => tab.name === activeTabName);
+//     return tabData?.studies?.map(
+//       ({ studyInstanceUid, date, description, numInstances, modalities, displaySets }) => {
+//         return (
+//           <React.Fragment key={studyInstanceUid}>
+//             <StudyItem
+//               date={date}
+//               description={description}
+//               numInstances={numInstances}
+//               isExpanded={true}
+//               displaySets={displaySets}
+//               modalities={modalities}
+//               isActive={true}
+//               onClick={() => {}}
+//               onClickThumbnail={onClickThumbnail}
+//               onDoubleClickThumbnail={onDoubleClickThumbnail}
+//               onClickUntrack={onClickUntrack}
+//               activeDisplaySetInstanceUIDs={activeDisplaySetInstanceUIDs}
+//               data-cy="thumbnail-list"
+//               viewPreset="thumbnails"
+//               ThumbnailMenuItems={ThumbnailMenuItems}
+//               StudyMenuItems={StudyMenuItems}
+//               StudyInstanceUID={studyInstanceUid}
+//             />
+//           </React.Fragment>
+//         );
+//       }
+//     );
+//   };
+
+//   return (
+//  <div className="flex h-full w-full overflow-x-auto overflow-y-hidden bg-black p-[8px]">
+//   <div className="flex flex-row gap-[8px] w-full">
+//         {getTabContent()}
+//       </div>
+//     </div>
+//   );
+// };
+
+// StudyBrowser.propTypes = {
+//   onClickTab: PropTypes.func.isRequired,
+//   onClickStudy: PropTypes.func,
+//   onClickThumbnail: PropTypes.func,
+//   onDoubleClickThumbnail: PropTypes.func,
+//   onClickUntrack: PropTypes.func,
+//   activeTabName: PropTypes.string.isRequired,
+//   expandedStudyInstanceUIDs: PropTypes.arrayOf(PropTypes.string).isRequired,
+//   activeDisplaySetInstanceUIDs: PropTypes.arrayOf(PropTypes.string),
+//   tabs: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string.isRequired,
+//       label: PropTypes.string.isRequired,
+//       studies: PropTypes.arrayOf(
+//         PropTypes.shape({
+//           studyInstanceUid: PropTypes.string.isRequired,
+//           date: PropTypes.string,
+//           numInstances: PropTypes.number,
+//           modalities: PropTypes.string,
+//           description: PropTypes.string,
+//           displaySets: PropTypes.arrayOf(
+//             PropTypes.shape({
+//               displaySetInstanceUID: PropTypes.string.isRequired,
+//               imageSrc: PropTypes.string,
+//               imageAltText: PropTypes.string,
+//               seriesDate: PropTypes.string,
+//               seriesNumber: PropTypes.any,
+//               numInstances: PropTypes.number,
+//               description: PropTypes.string,
+//               componentType: PropTypes.oneOf(['thumbnail', 'thumbnailTracked', 'thumbnailNoImage'])
+//                 .isRequired,
+//               isTracked: PropTypes.bool,
+//               dragData: PropTypes.shape({
+//                 type: PropTypes.string.isRequired,
+//               }),
+//             })
+//           ),
+//         })
+//       ).isRequired,
+//     })
+//   ),
+//   StudyMenuItems: PropTypes.func,
+// };
+
+// export { StudyBrowser };

@@ -63,20 +63,20 @@ const Thumbnail = ({
       <div
         className={classnames(
           'flex h-full w-full flex-col items-center justify-center gap-[2px] p-[4px]',
-          isActive && 'bg-popover rounded'
+          isActive && 'bg-gray-700 rounded'
         )}
       >
-        <div className="h-[114px] w-[128px]">
+        <div className="h-[90px] w-[100px]">
           <div className="relative bg-black">
             {imageSrc ? (
               <img
                 src={imageSrc}
                 alt={imageAltText}
-                className="h-[114px] w-[128px] rounded object-contain"
+               className="h-[90px] w-[100px] rounded object-contain"
                 crossOrigin="anonymous"
               />
             ) : (
-              <div className="bg-background h-[114px] w-[128px] rounded"></div>
+             <div className="bg-background h-[90px] w-[100px] rounded"></div>
             )}
 
             {/* bottom left */}
@@ -140,12 +140,12 @@ const Thumbnail = ({
             </div>
           </div>
         </div>
-        <div className="flex h-[52px] w-[128px] flex-col justify-start pt-px">
+        <div className="flex h-[40px] w-[100px] flex-col justify-start pt-px">
           <Tooltip>
             <TooltipContent>{description}</TooltipContent>
             <TooltipTrigger>
               <div
-                className="min-h-[18px] w-[128px] overflow-hidden text-ellipsis whitespace-nowrap pb-0.5 pl-1 text-left text-[12px] font-normal leading-4 text-white"
+                className="min-h-[18px] w-[100px] overflow-hidden text-ellipsis whitespace-nowrap pb-0.5 pl-1 text-left text-[12px] font-normal leading-4 text-white"
                 data-cy="series-description-label"
               >
                 {description}
@@ -175,7 +175,7 @@ const Thumbnail = ({
       <div
         className={classnames(
           'flex h-full w-full items-center justify-between pr-[8px] pl-[8px] pt-[4px] pb-[4px]',
-          isActive && 'bg-popover rounded'
+          isActive && 'bg-gray-700 rounded'
         )}
       >
         <div className="relative flex h-[32px] w-full items-center gap-[8px] overflow-hidden">
@@ -267,12 +267,18 @@ const Thumbnail = ({
 
   return (
     <div
-      className={classnames(
-        className,
-        'bg-muted hover:bg-primary/30 group flex cursor-pointer select-none flex-col rounded outline-none',
-        viewPreset === 'thumbnails' && 'h-[170px] w-[135px]',
-        viewPreset === 'list' && 'h-[40px] w-full'
-      )}
+      // className={classnames(
+      //   className,
+      //   'bg-muted hover:bg-primary/30 group flex cursor-pointer select-none flex-col rounded outline-none',
+      //   viewPreset === 'thumbnails' && 'h-[170px] w-[135px]',
+      //   viewPreset === 'list' && 'h-[40px] w-full'
+      // )}
+className={classnames(
+  className,
+  'bg-gray-800 hover:bg-gray-700 group flex cursor-pointer select-none flex-col rounded outline-none',
+  viewPreset === 'thumbnails' && 'h-[135px] w-[110px]',
+  viewPreset === 'list' && 'h-[40px] w-full'
+)}
       id={`thumbnail-${displaySetInstanceUID}`}
       data-cy={
         thumbnailType === 'thumbnailNoImage'

@@ -448,6 +448,34 @@ function PanelStudyBrowser({
       />
     </>
   );
+  // return (
+  //   <StudyBrowser
+  //     tabs={tabs}
+  //     servicesManager={servicesManager}
+  //     activeTabName={activeTabName}
+  //     expandedStudyInstanceUIDs={expandedStudyInstanceUIDs}
+  //     onClickStudy={_handleStudyClick}
+  //     onClickTab={clickedTabName => {
+  //       setActiveTabName(clickedTabName);
+  //     }}
+  //     onClickUntrack={onClickUntrack}
+  //     onClickThumbnail={() => {}}
+  //     onDoubleClickThumbnail={onDoubleClickThumbnailHandler}
+  //     activeDisplaySetInstanceUIDs={activeDisplaySetInstanceUIDs}
+  //     showSettings={false}
+  //     viewPresets={viewPresets}
+  //     ThumbnailMenuItems={MoreDropdownMenu({
+  //       commandsManager,
+  //       servicesManager,
+  //       menuItemsKey: 'studyBrowser.thumbnailMenuItems',
+  //     })}
+  //     StudyMenuItems={MoreDropdownMenu({
+  //       commandsManager,
+  //       servicesManager,
+  //       menuItemsKey: 'studyBrowser.studyMenuItems',
+  //     })}
+  //   />
+  // );
 }
 
 export default PanelStudyBrowser;
