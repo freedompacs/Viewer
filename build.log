@@ -1,0 +1,97 @@
+yarn run v1.22.22
+$ lerna run dev:viewer --stream
+lerna notice cli v7.4.2
+
+> @ohif/app:"dev:viewer"
+
+@ohif/app: [2K[1G@ohif/app: [2m$ yarn run dev[22m
+@ohif/app: [2K[1G@ohif/app: [2m$ cross-env NODE_ENV=development webpack serve --config .webpack/webpack.pwa.js[22m
+@ohif/app: Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+@ohif/app:   npx update-browserslist-db@latest
+@ohif/app:   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+@ohif/app: (node:256564) [DEP_WEBPACK_DEV_SERVER_PROXY_ROUTES_ARGUMENT] DeprecationWarning: Invalid proxy configuration:
+@ohif/app: {
+@ohif/app:   "/dicomweb": "http://localhost:5000",
+@ohif/app:   "logLevel": "info"
+@ohif/app: }
+@ohif/app: The use of proxy object notation as proxy routes has been removed.
+@ohif/app: Please use the 'router' or 'context' options. Read more at https://github.com/chimurai/http-proxy-middleware/tree/v2.0.6#http-proxy-middleware-options
+@ohif/app: (Use `node --trace-deprecation ...` to show where the warning was created)
+@ohif/app: <i> [webpack-dev-server] Project is running at:
+@ohif/app: <i> [webpack-dev-server] Loopback: [36mhttp://localhost:3000/[39m, [36mhttp://[::1]:3000/[39m
+@ohif/app: <i> [webpack-dev-server] On Your Network (IPv4): [36mhttp://192.168.31.235:3000/[39m
+@ohif/app: <i> [webpack-dev-server] Content not from webpack is served from '[36m../../testdata[39m' directory
+@ohif/app: <i> [webpack-dev-server] 404s will fallback to '[36m/index.html[39m'
+@ohif/app: <i> [webpack-dev-middleware] wait until bundle finished: /
+@ohif/app: The exported identifier "Services" is not declared in Babel's scope tracker
+@ohif/app: as a JavaScript value binding, and "@babel/plugin-transform-typescript"
+@ohif/app: never encountered it as a TypeScript type declaration.
+@ohif/app: It will be treated as a JavaScript value.
+@ohif/app: This problem is likely caused by another plugin injecting
+@ohif/app: "Services" without registering it in the scope tracker. If you are the author
+@ohif/app:  of that plugin, please use "scope.registerDeclaration(declarationPath)".
+@ohif/app: assets by path [1m[32massets/[39m[22m 1.4 MiB 75 assets
+@ohif/app: assets by path [1m[32m*.js[39m[22m 44 MiB 67 assets
+@ohif/app: assets by path [1m[32mort/[39m[22m 136 MiB 55 assets
+@ohif/app: assets by path [1m[32mdicom-microscopy-viewer/[39m[22m 19.6 MiB 8 assets
+@ohif/app: assets by info 7.97 MiB [1m[32m[immutable][39m[22m 6 assets
+@ohif/app: assets by path [1m[32m*.svg[39m[22m 87.5 KiB 3 assets
+@ohif/app: assets by path [1m[32m*.html[39m[22m 6.78 KiB
+@ohif/app:   asset [1m[32mindex.html[39m[22m 6.15 KiB [1m[32m[emitted][39m[22m
+@ohif/app:   asset [1m[32msilent-refresh.html[39m[22m 640 bytes [1m[32m[emitted][39m[22m [from: ../public/silent-refresh.html] [1m[32m[copied][39m[22m
+@ohif/app: assets by path [1m[32m*.json[39m[22m 1.34 KiB
+@ohif/app:   asset [1m[32mmanifest.json[39m[22m 1.28 KiB [1m[32m[emitted][39m[22m [from: ../public/manifest.json] [1m[32m[copied][39m[22m
+@ohif/app:   asset [1m[32mserve.json[39m[22m 67 bytes [1m[32m[emitted][39m[22m [from: ../public/serve.json] [1m[32m[copied][39m[22m
+@ohif/app: asset [1m[32m_redirects[39m[22m 150 bytes [1m[32m[emitted][39m[22m [from: ../public/_redirects] [1m[32m[copied][39m[22m
+@ohif/app: asset [1m[32mInnowave.svg.svg:Zone.Identifier[39m[22m 75 bytes [1m[32m[emitted][39m[22m [from: ../public/Innowave.svg.svg:Zone.Identifier] [1m[32m[copied][39m[22m
+@ohif/app: asset [1m[32m_headers[39m[22m 0 bytes [1m[32m[emitted][39m[22m [from: ../public/_headers] [1m[32m[copied][39m[22m
+@ohif/app: [1mLOG from InjectManifest[39m[22m
+@ohif/app: <i> [1m[32mThe service worker at sw.js will precache[39m[22m
+@ohif/app: <i> [1m[32m        281 URLs, totaling 257 MB.[39m[22m
+@ohif/app: [1m[33mWARNING[39m[22m in [entry] [initial]
+@ohif/app: [1mCircular dependency between chunks with runtime (app, compute, polySeg)
+@ohif/app: This prevents using hashes of each other and should be avoided.[39m[22m
+@ohif/app: webpack 5.95.0 compiled with [1m[33m1 warning[39m[22m in 23237 ms (5ee3acbbca6598020fe9)
+@ohif/app: <i> [webpack-dev-middleware] wait until bundle finished: /app-config.js
+@ohif/app: <i> [webpack-dev-middleware] wait until bundle finished: /init-service-worker.js
+@ohif/app: assets by status 185 MiB [1m[32m[cached][39m[22m 213 assets
+@ohif/app: assets by status 23.4 MiB [1m[32m[emitted][39m[22m
+@ohif/app:   assets by path [1m[32m*.js[39m[22m 23.4 MiB
+@ohif/app:     assets by info 4.08 KiB [1m[32m[immutable][39m[22m
+@ohif/app:       asset [1m[32minterpolation.5ee3acbbca6598020fe9.hot-update.js[39m[22m 1.07 KiB [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m (name: interpolation) 1 related asset
+@ohif/app:       asset [1m[32mapp.5ee3acbbca6598020fe9.hot-update.js[39m[22m 1.02 KiB [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m (name: app) 1 related asset
+@ohif/app:       + 5 assets
+@ohif/app:     + 8 assets
+@ohif/app:   assets by path [1m[32m*.json[39m[22m 344 bytes
+@ohif/app:     asset [1m[32mfc49c6d3868b59806819.5ee3acbbca6598020fe9.hot-update.json[39m[22m 107 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m
+@ohif/app:     asset [1m[32mf860d6f2d9afc26ef01e.5ee3acbbca6598020fe9.hot-update.json[39m[22m 71 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m
+@ohif/app:     asset [1m[32m5cb25928b5d9e9a3db9c.5ee3acbbca6598020fe9.hot-update.json[39m[22m 40 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m
+@ohif/app:     asset [1m[32mc214c7ef7793ad6d669d.5ee3acbbca6598020fe9.hot-update.json[39m[22m 37 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m
+@ohif/app:     asset [1m[32md6aaafa183cfdba1a372.5ee3acbbca6598020fe9.hot-update.json[39m[22m 31 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m
+@ohif/app:     + 2 assets
+@ohif/app: Entrypoint [1mapp[39m[22m 23 MiB (23 MiB) = [1m[32mapp.js[39m[22m 23 MiB [1m[32mapp.5ee3acbbca6598020fe9.hot-update.js[39m[22m 1.02 KiB 34 auxiliary assets
+@ohif/app: [1mLOG from InjectManifest[39m[22m
+@ohif/app: <i> [1m[32mThe service worker at sw.js will precache[39m[22m
+@ohif/app: <i> [1m[32m        301 URLs, totaling 257 MB.[39m[22m
+@ohif/app: [1m[33mWARNING[39m[22m in [entry] [initial]
+@ohif/app: [1mCircular dependency between chunks with runtime (app, compute, polySeg)
+@ohif/app: This prevents using hashes of each other and should be avoided.[39m[22m
+@ohif/app: [1m[33mWARNING[39m[22m in [1mInjectManifest has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate! Please see https://github.com/GoogleChrome/workbox/issues/1790 for more information.[39m[22m
+@ohif/app: webpack 5.95.0 compiled with [1m[33m2 warnings[39m[22m in 2645 ms (8e08e9da8a3e53a7482c)
+@ohif/app: [2K[1G[31merror[39m Command failed with exit code 1.
+@ohif/app: [2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.
+@ohif/app: [2K[1G@ohif/app: [31merror[39m Command failed with exit code 1.
+@ohif/app: [2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.
+
+ 
+
+ >  Lerna (powered by Nx)   Running target dev:viewer for project @ohif/app failed
+
+   Failed tasks:
+   
+   - @ohif/app:dev:viewer
+   
+   Hint: run the command with --verbose for more details.
+
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

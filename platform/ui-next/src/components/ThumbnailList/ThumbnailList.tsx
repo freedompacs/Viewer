@@ -127,6 +127,131 @@
 
 
 
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import PropTypes from 'prop-types';
+
+// import { Thumbnail } from '../Thumbnail';
+// import { useDynamicMaxHeight } from '../../hooks/useDynamicMaxHeight';
+
+// const ThumbnailList = ({
+//   thumbnails,
+//   onThumbnailClick,
+//   onThumbnailDoubleClick,
+//   onClickUntrack,
+//   activeDisplaySetInstanceUIDs = [],
+//   viewPreset,
+//   ThumbnailMenuItems,
+// }) => {
+//   const { ref, maxHeight } = useDynamicMaxHeight(thumbnails);
+
+//   const listItems = thumbnails?.filter(
+//     ({ componentType }) => componentType === 'thumbnailNoImage' || viewPreset === 'list'
+//   );
+
+//   const thumbnailItems = thumbnails?.filter(
+//     ({ componentType }) => componentType !== 'thumbnailNoImage' && viewPreset === 'thumbnails'
+//   );
+
+//   return (
+//     <div className="flex flex-row gap-[8px]">
+//       {thumbnailItems.length > 0 && (
+//         <>
+//           {thumbnailItems.map(item => {
+//             const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
+
+//             const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
+//             return (
+//               <Thumbnail
+//                 key={displaySetInstanceUID}
+//                 {...rest}
+//                 displaySetInstanceUID={displaySetInstanceUID}
+//                 numInstances={numInstances || 1}
+//                 isActive={isActive}
+//                 thumbnailType={componentType}
+//                 viewPreset="thumbnails"
+//                 onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+//                 onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+//                 onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
+//                 ThumbnailMenuItems={ThumbnailMenuItems}
+//               />
+//             );
+//           })}
+//         </>
+//       )}
+//       {listItems.length > 0 && (
+//         <>
+//           {listItems.map(item => {
+//             const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
+//             const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
+//             return (
+//               <Thumbnail
+//                 key={displaySetInstanceUID}
+//                 {...rest}
+//                 displaySetInstanceUID={displaySetInstanceUID}
+//                 numInstances={numInstances || 1}
+//                 isActive={isActive}
+//                 thumbnailType={componentType}
+//                 viewPreset="list"
+//                 onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+//                 onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+//                 onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
+//                 ThumbnailMenuItems={ThumbnailMenuItems}
+//               />
+//             );
+//           })}
+//         </>
+//       )}
+//     </div>
+//   );
+// };
+
+// ThumbnailList.propTypes = {
+//   thumbnails: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       displaySetInstanceUID: PropTypes.string.isRequired,
+//       imageSrc: PropTypes.string,
+//       imageAltText: PropTypes.string,
+//       seriesDate: PropTypes.string,
+//       seriesNumber: PropTypes.any,
+//       numInstances: PropTypes.number,
+//       description: PropTypes.string,
+//       componentType: PropTypes.any,
+//       isTracked: PropTypes.bool,
+//       dragData: PropTypes.shape({
+//         type: PropTypes.string.isRequired,
+//       }),
+//     })
+//   ),
+//   activeDisplaySetInstanceUIDs: PropTypes.arrayOf(PropTypes.string),
+//   onThumbnailClick: PropTypes.func.isRequired,
+//   onThumbnailDoubleClick: PropTypes.func.isRequired,
+//   onClickUntrack: PropTypes.func.isRequired,
+//   viewPreset: PropTypes.string,
+//   ThumbnailMenuItems: PropTypes.any,
+// };
+
+// export { ThumbnailList };
+
+
+
+
+
+
+
+
+
+
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -141,6 +266,7 @@ const ThumbnailList = ({
   activeDisplaySetInstanceUIDs = [],
   viewPreset,
   ThumbnailMenuItems,
+  isMobile = false, // ADD THIS
 }) => {
   const { ref, maxHeight } = useDynamicMaxHeight(thumbnails);
 
@@ -152,55 +278,93 @@ const ThumbnailList = ({
     ({ componentType }) => componentType !== 'thumbnailNoImage' && viewPreset === 'thumbnails'
   );
 
-  return (
-    <div className="flex flex-row gap-[8px]">
-      {thumbnailItems.length > 0 && (
-        <>
-          {thumbnailItems.map(item => {
-            const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
+  // MOBILE LAYOUT - Horizontal row
+  if (isMobile) {
+    return (
+      <div className="flex flex-row gap-[8px]">
+        {thumbnailItems.map(item => {
+          const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
+          const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
+          return (
+            <Thumbnail
+              key={displaySetInstanceUID}
+              {...rest}
+              displaySetInstanceUID={displaySetInstanceUID}
+              numInstances={numInstances || 1}
+              isActive={isActive}
+              thumbnailType={componentType}
+              viewPreset="thumbnails"
+              onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+              onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+              onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
+              ThumbnailMenuItems={ThumbnailMenuItems}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 
-            const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
-            return (
-              <Thumbnail
-                key={displaySetInstanceUID}
-                {...rest}
-                displaySetInstanceUID={displaySetInstanceUID}
-                numInstances={numInstances || 1}
-                isActive={isActive}
-                thumbnailType={componentType}
-                viewPreset="thumbnails"
-                onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
-                onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
-                onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
-                ThumbnailMenuItems={ThumbnailMenuItems}
-              />
-            );
-          })}
-        </>
-      )}
-      {listItems.length > 0 && (
-        <>
-          {listItems.map(item => {
-            const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
-            const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
-            return (
-              <Thumbnail
-                key={displaySetInstanceUID}
-                {...rest}
-                displaySetInstanceUID={displaySetInstanceUID}
-                numInstances={numInstances || 1}
-                isActive={isActive}
-                thumbnailType={componentType}
-                viewPreset="list"
-                onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
-                onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
-                onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
-                ThumbnailMenuItems={ThumbnailMenuItems}
-              />
-            );
-          })}
-        </>
-      )}
+  // DESKTOP LAYOUT - Grid
+  return (
+    <div className="flex flex-col">
+      <div
+        ref={ref}
+        className="flex flex-col gap-[2px] pt-[4px] pr-[2.5px] pl-[5px] pb-[4px]"
+      >
+        {thumbnailItems.length > 0 && (
+          <div
+            id="ohif-thumbnail-list"
+            className="bg-bkg-low grid grid-cols-[repeat(auto-fit,_minmax(0,135px))] place-items-start gap-[4px]"
+          >
+            {thumbnailItems.map(item => {
+              const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
+              const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
+              return (
+                <Thumbnail
+                  key={displaySetInstanceUID}
+                  {...rest}
+                  displaySetInstanceUID={displaySetInstanceUID}
+                  numInstances={numInstances || 1}
+                  isActive={isActive}
+                  thumbnailType={componentType}
+                  viewPreset="thumbnails"
+                  onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+                  onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+                  onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
+                  ThumbnailMenuItems={ThumbnailMenuItems}
+                />
+              );
+            })}
+          </div>
+        )}
+        {listItems.length > 0 && (
+          <div
+            id="ohif-thumbnail-list"
+            className="bg-bkg-low grid grid-cols-[repeat(auto-fit,_minmax(0,275px))] place-items-start gap-[4px]"
+          >
+            {listItems.map(item => {
+              const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
+              const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
+              return (
+                <Thumbnail
+                  key={displaySetInstanceUID}
+                  {...rest}
+                  displaySetInstanceUID={displaySetInstanceUID}
+                  numInstances={numInstances || 1}
+                  isActive={isActive}
+                  thumbnailType={componentType}
+                  viewPreset="list"
+                  onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+                  onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+                  onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
+                  ThumbnailMenuItems={ThumbnailMenuItems}
+                />
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
@@ -228,6 +392,7 @@ ThumbnailList.propTypes = {
   onClickUntrack: PropTypes.func.isRequired,
   viewPreset: PropTypes.string,
   ThumbnailMenuItems: PropTypes.any,
+  isMobile: PropTypes.bool,
 };
 
 export { ThumbnailList };

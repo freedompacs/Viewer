@@ -355,7 +355,7 @@
 //                 </div>
 //               </div>
 //             </div>
-            
+
 //             {/* Patient Info in Center */}
 //             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
 //               {PatientInfo}
@@ -526,7 +526,7 @@
 //                 </div>
 //               </div>
 //             </div>
-            
+
 //             <div className="absolute left-1/2 top-1/2 responsive-patient">
 //               {PatientInfo}
 //             </div>
@@ -695,7 +695,7 @@
 //                 </div>
 //               </div>
 //             </div>
-            
+
 //             <div className="absolute right-1 top-1/2 responsive-patient">
 //               {PatientInfo}
 //             </div>
@@ -828,24 +828,24 @@
 //   }
 //   @media (max-width: 1200px) {
 //     .responsive-logo { transform: scale(0.85); transform-origin: left; }
-//     .responsive-patient { 
-//       transform: translateY(-50%) scale(0.85); 
+//     .responsive-patient {
+//       transform: translateY(-50%) scale(0.85);
 //       right: 4px;
 //       transform-origin: right;
 //     }
 //   }
 //   @media (max-width: 900px) {
 //     .responsive-logo { transform: scale(0.7); transform-origin: left; }
-//     .responsive-patient { 
-//       transform: translateY(-50%) scale(0.7); 
+//     .responsive-patient {
+//       transform: translateY(-50%) scale(0.7);
 //       right: 4px;
 //       transform-origin: right;
 //     }
 //   }
 //   @media (max-width: 600px) {
 //     .responsive-logo { transform: scale(0.6); transform-origin: left; }
-//     .responsive-patient { 
-//       transform: translateY(-50%) scale(0.6); 
+//     .responsive-patient {
+//       transform: translateY(-50%) scale(0.6);
 //       right: 4px;
 //       transform-origin: right;
 //     }
@@ -872,7 +872,7 @@
 //                 </div>
 //               </div>
 //             </div>
-            
+
 //             <div className="top-1/2 responsive-patient">
 //               {PatientInfo}
 //             </div>
@@ -1014,59 +1014,59 @@
 //           transform-origin: left;
 //         }
 //         @media (max-width: 1200px) {
-//           .responsive-logo { 
-//             transform: scale(0.85); 
-//             transform-origin: left; 
+//           .responsive-logo {
+//             transform: scale(0.85);
+//             transform-origin: left;
 //           }
-//           .responsive-patient { 
-//             transform: translateY(-50%) scale(0.85); 
+//           .responsive-patient {
+//             transform: translateY(-50%) scale(0.85);
 //             right: 4px;
 //             transform-origin: right;
 //           }
-//           .responsive-left-tools { 
-//             transform: scale(0.9); 
+//           .responsive-left-tools {
+//             transform: scale(0.9);
 //             transform-origin: left;
 //           }
-//           .responsive-right-tools { 
-//             transform: scale(0.9); 
+//           .responsive-right-tools {
+//             transform: scale(0.9);
 //             transform-origin: right;
 //           }
 //         }
 //         @media (max-width: 900px) {
-//           .responsive-logo { 
-//             transform: scale(0.7); 
-//             transform-origin: left; 
+//           .responsive-logo {
+//             transform: scale(0.7);
+//             transform-origin: left;
 //           }
-//           .responsive-patient { 
-//             transform: translateY(-50%) scale(0.7); 
+//           .responsive-patient {
+//             transform: translateY(-50%) scale(0.7);
 //             right: 4px;
 //             transform-origin: right;
 //           }
-//           .responsive-left-tools { 
-//             transform: scale(0.8); 
+//           .responsive-left-tools {
+//             transform: scale(0.8);
 //             transform-origin: left;
 //           }
-//           .responsive-right-tools { 
-//             transform: scale(0.8); 
+//           .responsive-right-tools {
+//             transform: scale(0.8);
 //             transform-origin: right;
 //           }
 //         }
 //         @media (max-width: 600px) {
-//           .responsive-logo { 
-//             transform: scale(0.6); 
-//             transform-origin: left; 
+//           .responsive-logo {
+//             transform: scale(0.6);
+//             transform-origin: left;
 //           }
-//           .responsive-patient { 
-//             transform: translateY(-50%) scale(0.6); 
+//           .responsive-patient {
+//             transform: translateY(-50%) scale(0.6);
 //             right: 4px;
 //             transform-origin: right;
 //           }
-//           .responsive-left-tools { 
-//             transform: scale(0.7); 
+//           .responsive-left-tools {
+//             transform: scale(0.7);
 //             transform-origin: left;
 //           }
-//           .responsive-right-tools { 
-//             transform: scale(0.7); 
+//           .responsive-right-tools {
+//             transform: scale(0.7);
 //             transform-origin: right;
 //           }
 //         }
@@ -1099,7 +1099,7 @@
 //                 </div>
 //               </div>
 //             </div>
-            
+
 //             <div className="top-1/2 responsive-patient">
 //               {PatientInfo}
 //             </div>
@@ -1173,8 +1173,235 @@
 
 
 
+//Good
+// import React, { ReactNode } from 'react';
+// import classNames from 'classnames';
+// import {
+//   DropdownMenu,
+//   DropdownMenuTrigger,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   Icons,
+//   Button,
+//   ToolButton,
+// } from '../';
+// import { IconPresentationProvider } from '@ohif/ui-next';
 
-import React, { ReactNode } from 'react';
+// import NavBar from '../NavBar';
+
+// interface HeaderProps {
+//   children?: ReactNode;
+//   menuOptions: Array<{
+//     title: string;
+//     icon?: string;
+//     onClick: () => void;
+//   }>;
+//   isReturnEnabled?: boolean;
+//   onClickReturnButton?: () => void;
+//   isSticky?: boolean;
+//   WhiteLabeling?: {
+//     createLogoComponentFn?: (React: any, props: any) => ReactNode;
+//   };
+//   PatientInfo?: ReactNode;
+//   Secondary?: ReactNode;
+//   UndoRedo?: ReactNode;
+// }
+
+// function Header({
+//   children,
+//   menuOptions,
+//   isReturnEnabled = true,
+//   onClickReturnButton,
+//   isSticky = false,
+//   WhiteLabeling,
+//   PatientInfo,
+//   UndoRedo,
+//   Secondary,
+//   ...props
+// }: HeaderProps): ReactNode {
+//   const onClickReturn = () => {
+//     if (isReturnEnabled && onClickReturnButton) {
+//       onClickReturnButton();
+//     }
+//   };
+
+//   return (
+//     <IconPresentationProvider
+//       size="large"
+//       IconContainer={ToolButton}
+//     >
+//       <style>{`
+//         .responsive-patient {
+//           transform: translateY(-50%);
+//           position: absolute;
+//           right: 4px;
+//         }
+//         .responsive-right-tools {
+//           transform: scale(1);
+//         }
+//         .responsive-left-tools {
+//           transform: scale(1);
+//           transform-origin: left;
+//         }
+//         @media (max-width: 1200px) {
+//           .responsive-logo {
+//             transform: scale(0.85);
+//             transform-origin: left;
+//           }
+//           .responsive-patient {
+//             transform: translateY(-50%) scale(0.85);
+//             right: 4px;
+//             transform-origin: right;
+//           }
+//           .responsive-left-tools {
+//             transform: scale(0.9);
+//             transform-origin: left;
+//           }
+//           .responsive-right-tools {
+//             transform: scale(0.9);
+//             transform-origin: right;
+//           }
+//         }
+//         @media (max-width: 900px) {
+//           .responsive-logo {
+//             transform: scale(0.7);
+//             transform-origin: left;
+//           }
+//           .responsive-patient {
+//             transform: translateY(-50%) scale(0.7);
+//             right: 4px;
+//             transform-origin: right;
+//           }
+//           .responsive-left-tools {
+//             transform: scale(0.8);
+//             transform-origin: left;
+//           }
+//           .responsive-right-tools {
+//             transform: scale(0.8);
+//             transform-origin: right;
+//           }
+//         }
+//         @media (max-width: 600px) {
+//           .responsive-logo {
+//             transform: scale(0.6);
+//             transform-origin: left;
+//           }
+//           .responsive-patient {
+//             transform: translateY(-50%) scale(0.6);
+//             right: 4px;
+//             transform-origin: right;
+//           }
+//           .responsive-left-tools {
+//             transform: scale(0.7);
+//             transform-origin: left;
+//           }
+//           .responsive-right-tools {
+//             transform: scale(0.7);
+//             transform-origin: right;
+//           }
+//         }
+//         .toolbar-scroll {
+//           scrollbar-width: none;
+//           -ms-overflow-style: none;
+//         }
+//         .toolbar-scroll::-webkit-scrollbar {
+//           display: none;
+//         }
+//       `}</style>
+//       <div className="flex flex-col">
+//         <NavBar
+//           isSticky={isSticky}
+//           {...props}
+//         >
+//           <div className="relative h-[48px] items-center">
+//             <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center">
+//               <div
+//                 className={classNames(
+//                   'mr-2 inline-flex items-center',
+//                   isReturnEnabled && 'cursor-pointer'
+//                 )}
+//                 onClick={onClickReturn}
+//                 data-cy="return-to-work-list"
+//               >
+//                 {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />}
+//                 <div className="ml-1 responsive-logo">
+//                   {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Icons.InnowaveLogo />}
+//                 </div>
+//               </div>
+//             </div>
+
+//             <div className="top-1/2 responsive-patient">
+//               {PatientInfo}
+//             </div>
+//           </div>
+//         </NavBar>
+
+//         <div className="bg-black border-t border-gray-800 relative h-[38px]">
+//           <div className="absolute left-0 right-0 top-0 bottom-0 overflow-x-auto overflow-y-hidden toolbar-scroll flex items-center">
+//             <div className="flex items-center gap-2 responsive-left-tools whitespace-nowrap pl-2">
+//               {Secondary}
+//               {children}
+//             </div>
+//             <div style={{ width: '50px', minWidth: '50px', height: '1px' }}></div>
+//           </div>
+//           <div className="absolute right-1 top-0 h-full flex items-center gap-2 responsive-right-tools bg-black pl-4">
+//             {UndoRedo}
+//             <div className="border-primary-dark mx-1.5 h-[20px] border-r"></div>
+//             <div className="flex-shrink-0">
+//               <DropdownMenu>
+//                 <DropdownMenuTrigger asChild>
+//                   <Button
+//                     variant="ghost"
+//                     size="icon"
+//                     className="text-primary hover:bg-primary-dark flex items-center justify-center"
+//                   >
+//                     <Icons.GearSettings />
+//                   </Button>
+//                 </DropdownMenuTrigger>
+//                 <DropdownMenuContent align="end">
+//                   {menuOptions.map((option, index) => {
+//                     const IconComponent = option.icon
+//                       ? Icons[option.icon as keyof typeof Icons]
+//                         : null;
+//                     return (
+//                       <DropdownMenuItem
+//                         key={index}
+//                         onSelect={option.onClick}
+//                         className="flex items-center gap-2 py-2"
+//                       >
+//                         {IconComponent && (
+//                           <span className="flex h-4 w-4 items-center justify-center">
+//                             <Icons.ByName name={option.icon} />
+//                           </span>
+//                         )}
+//                         <span className="flex-1">{option.title}</span>
+//                       </DropdownMenuItem>
+//                     );
+//                   })}
+//                 </DropdownMenuContent>
+//               </DropdownMenu>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </IconPresentationProvider>
+//   );
+// }
+
+// export default Header;
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { ReactNode, useRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import {
   DropdownMenu,
@@ -1219,11 +1446,47 @@ function Header({
   Secondary,
   ...props
 }: HeaderProps): ReactNode {
+  const toolbarScrollRef = useRef<HTMLDivElement>(null);
+  const toolsContainerRef = useRef<HTMLDivElement>(null);
+  const rightButtonsRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [toolbarWidth, setToolbarWidth] = useState(0);
+  const [toolsWidth, setToolsWidth] = useState(0);
+
   const onClickReturn = () => {
     if (isReturnEnabled && onClickReturnButton) {
       onClickReturnButton();
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+
+      if (toolbarScrollRef.current && toolsContainerRef.current) {
+        const scrollContainer = toolbarScrollRef.current;
+        const toolsContainer = toolsContainerRef.current;
+
+        const availableWidth = scrollContainer.offsetWidth;
+        const contentWidth = toolsContainer.scrollWidth;
+
+        setToolbarWidth(availableWidth);
+        setToolsWidth(contentWidth);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    const timer = setTimeout(handleResize, 100);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
+  }, [children, Secondary, UndoRedo]);
+
+  const shouldCenter = !isMobile && toolsWidth < toolbarWidth;
 
   return (
     <IconPresentationProvider
@@ -1244,59 +1507,59 @@ function Header({
           transform-origin: left;
         }
         @media (max-width: 1200px) {
-          .responsive-logo { 
-            transform: scale(0.85); 
-            transform-origin: left; 
+          .responsive-logo {
+            transform: scale(0.85);
+            transform-origin: left;
           }
-          .responsive-patient { 
-            transform: translateY(-50%) scale(0.85); 
+          .responsive-patient {
+            transform: translateY(-50%) scale(0.85);
             right: 4px;
             transform-origin: right;
           }
-          .responsive-left-tools { 
-            transform: scale(0.9); 
+          .responsive-left-tools {
+            transform: scale(0.9);
             transform-origin: left;
           }
-          .responsive-right-tools { 
-            transform: scale(0.9); 
+          .responsive-right-tools {
+            transform: scale(0.9);
             transform-origin: right;
           }
         }
         @media (max-width: 900px) {
-          .responsive-logo { 
-            transform: scale(0.7); 
-            transform-origin: left; 
+          .responsive-logo {
+            transform: scale(0.7);
+            transform-origin: left;
           }
-          .responsive-patient { 
-            transform: translateY(-50%) scale(0.7); 
+          .responsive-patient {
+            transform: translateY(-50%) scale(0.7);
             right: 4px;
             transform-origin: right;
           }
-          .responsive-left-tools { 
-            transform: scale(0.8); 
+          .responsive-left-tools {
+            transform: scale(0.8);
             transform-origin: left;
           }
-          .responsive-right-tools { 
-            transform: scale(0.8); 
+          .responsive-right-tools {
+            transform: scale(0.8);
             transform-origin: right;
           }
         }
         @media (max-width: 600px) {
-          .responsive-logo { 
-            transform: scale(0.6); 
-            transform-origin: left; 
+          .responsive-logo {
+            transform: scale(0.6);
+            transform-origin: left;
           }
-          .responsive-patient { 
-            transform: translateY(-50%) scale(0.6); 
+          .responsive-patient {
+            transform: translateY(-50%) scale(0.6);
             right: 4px;
             transform-origin: right;
           }
-          .responsive-left-tools { 
-            transform: scale(0.7); 
+          .responsive-left-tools {
+            transform: scale(0.7);
             transform-origin: left;
           }
-          .responsive-right-tools { 
-            transform: scale(0.7); 
+          .responsive-right-tools {
+            transform: scale(0.7);
             transform-origin: right;
           }
         }
@@ -1320,7 +1583,6 @@ function Header({
                   'mr-2 inline-flex items-center',
                   isReturnEnabled && 'cursor-pointer'
                 )}
-                onClick={onClickReturn}
                 data-cy="return-to-work-list"
               >
                 {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />}
@@ -1329,7 +1591,7 @@ function Header({
                 </div>
               </div>
             </div>
-            
+
             <div className="top-1/2 responsive-patient">
               {PatientInfo}
             </div>
@@ -1337,14 +1599,26 @@ function Header({
         </NavBar>
 
         <div className="bg-black border-t border-gray-800 relative h-[38px]">
-          <div className="absolute left-0 right-0 top-0 bottom-0 overflow-x-auto overflow-y-hidden toolbar-scroll flex items-center">
-            <div className="flex items-center gap-2 responsive-left-tools whitespace-nowrap pl-2">
+          <div
+            ref={toolbarScrollRef}
+            className="absolute left-0 right-0 top-0 bottom-0 overflow-x-auto overflow-y-hidden toolbar-scroll flex items-center"
+          >
+            <div
+              ref={toolsContainerRef}
+              className={classNames(
+                'flex items-center gap-2 responsive-left-tools whitespace-nowrap h-full',
+                shouldCenter ? 'mx-auto' : 'pl-2 pr-2'
+              )}
+            >
               {Secondary}
               {children}
             </div>
-            <div style={{ width: '50px', minWidth: '50px', height: '1px' }}></div>
           </div>
-          <div className="absolute right-1 top-0 h-full flex items-center gap-2 responsive-right-tools bg-black pl-4">
+
+          <div
+            ref={rightButtonsRef}
+            className="absolute right-1 top-0 h-full flex items-center gap-2 responsive-right-tools bg-black pl-4 pointer-events-auto z-10"
+          >
             {UndoRedo}
             <div className="border-primary-dark mx-1.5 h-[20px] border-r"></div>
             <div className="flex-shrink-0">
@@ -1362,7 +1636,7 @@ function Header({
                   {menuOptions.map((option, index) => {
                     const IconComponent = option.icon
                       ? Icons[option.icon as keyof typeof Icons]
-                        : null;
+                      : null;
                     return (
                       <DropdownMenuItem
                         key={index}
