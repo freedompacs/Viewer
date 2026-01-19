@@ -2091,7 +2091,7 @@ useEffect(() => {
           className="flex-1 relative flex flex-col overflow-hidden"
           style={{ height: `calc(100vh - ${HEADER_HEIGHT + MOBILE_FOOTER_HEIGHT}px)` }}
         >
-          {/* {showLoadingIndicator && <LoadingIndicatorProgress className="absolute inset-0 bg-black" />} */}
+          {showLoadingIndicator && <LoadingIndicatorProgress className="absolute inset-0 bg-black" />}
 
           <ResizablePanelGroup {...resizablePanelGroupProps} key={`mobile-panels-${layoutKey}`}>
             <ResizablePanel {...resizableViewportGridPanelProps}>

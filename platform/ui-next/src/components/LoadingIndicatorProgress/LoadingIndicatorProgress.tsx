@@ -29,7 +29,6 @@
 // export default LoadingIndicatorProgress;
 
 
-
 import React from 'react';
 import classNames from 'classnames';
 import { Icons } from '../Icons';
