@@ -273,10 +273,17 @@ const Thumbnail = ({
       //   viewPreset === 'thumbnails' && 'h-[170px] w-[135px]',
       //   viewPreset === 'list' && 'h-[40px] w-full'
       // )}
+
+// className={classnames(
+//   className,
+//   'bg-gray-800 hover:bg-gray-700 group flex cursor-pointer select-none flex-col rounded outline-none',
+//   viewPreset === 'thumbnails' && 'h-[135px] w-[110px]',
+//   viewPreset === 'list' && 'h-[40px] w-full'
+// )}
 className={classnames(
   className,
-  'bg-gray-800 hover:bg-gray-700 group flex cursor-pointer select-none flex-col rounded outline-none',
-  viewPreset === 'thumbnails' && 'h-[135px] w-[110px]',
+  'bg-gray-800 hover:bg-gray-700 group flex cursor-pointer select-none flex-col rounded outline-none overflow-hidden',
+  viewPreset === 'thumbnails' && 'h-[125px] w-[110px]',
   viewPreset === 'list' && 'h-[40px] w-full'
 )}
       id={`thumbnail-${displaySetInstanceUID}`}

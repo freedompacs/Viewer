@@ -338,15 +338,24 @@ const StudyBrowser = ({
   };
 
   // MOBILE LAYOUT
+  // if (isMobile) {
+  //   return (
+  //     <div className="flex h-full w-full overflow-x-auto overflow-y-hidden bg-black p-[8px]">
+  //       <div className="flex flex-row gap-[8px] w-full">
+  //         {getTabContent()}
+  //       </div>
+  //     </div>
+  //   );
+  // }
   if (isMobile) {
-    return (
-      <div className="flex h-full w-full overflow-x-auto overflow-y-hidden bg-black p-[8px]">
-        <div className="flex flex-row gap-[8px] w-full">
-          {getTabContent()}
-        </div>
+  return (
+    <div className="flex h-full w-full overflow-x-auto overflow-y-hidden bg-black p-[8px]">
+      <div className="flex flex-row gap-[8px]">
+        {getTabContent()}
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   // DESKTOP LAYOUT
   return (

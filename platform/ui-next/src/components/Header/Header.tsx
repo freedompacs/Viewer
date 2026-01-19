@@ -1493,7 +1493,7 @@ function Header({
       size="large"
       IconContainer={ToolButton}
     >
-      <style>{`
+      {/* <style>{`
         .responsive-patient {
           transform: translateY(-50%);
           position: absolute;
@@ -1570,7 +1570,90 @@ function Header({
         .toolbar-scroll::-webkit-scrollbar {
           display: none;
         }
-      `}</style>
+      `}</style> */}
+      <style>{`
+  .responsive-patient {
+    transform: translateY(-50%);
+    position: absolute;
+    right: 4px;
+  }
+  .responsive-right-tools {
+    transform: scale(1);
+  }
+  .responsive-left-tools {
+    transform: scale(1);
+    transform-origin: left;
+  }
+
+  /* Mobile toolbar icons */
+  @media (max-width: 768px) {
+    .responsive-left-tools {
+      transform: scale(1) !important;
+    }
+    .responsive-right-tools {
+      transform: scale(1) !important;
+    }
+    .responsive-left-tools button {
+      width: 40px !important;
+      height: 40px !important;
+      min-width: 40px !important;
+      min-height: 40px !important;
+    }
+    .responsive-left-tools button svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+    .responsive-right-tools button {
+      width: 40px !important;
+      height: 40px !important;
+    }
+    .responsive-right-tools button svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .responsive-logo {
+      transform: scale(0.85);
+      transform-origin: left;
+    }
+    .responsive-patient {
+      transform: translateY(-50%) scale(0.85);
+      right: 4px;
+      transform-origin: right;
+    }
+  }
+  @media (max-width: 900px) {
+    .responsive-logo {
+      transform: scale(0.7);
+      transform-origin: left;
+    }
+    .responsive-patient {
+      transform: translateY(-50%) scale(0.7);
+      right: 4px;
+      transform-origin: right;
+    }
+  }
+  @media (max-width: 600px) {
+    .responsive-logo {
+      transform: scale(0.6);
+      transform-origin: left;
+    }
+    .responsive-patient {
+      transform: translateY(-50%) scale(0.6);
+      right: 4px;
+      transform-origin: right;
+    }
+  }
+  .toolbar-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .toolbar-scroll::-webkit-scrollbar {
+    display: none;
+  }
+`}</style>
       <div className="flex flex-col">
         <NavBar
           isSticky={isSticky}
@@ -1603,16 +1686,29 @@ function Header({
             ref={toolbarScrollRef}
             className="absolute left-0 right-0 top-0 bottom-0 overflow-x-auto overflow-y-hidden toolbar-scroll flex items-center"
           >
-            <div
-              ref={toolsContainerRef}
-              className={classNames(
-                'flex items-center gap-2 responsive-left-tools whitespace-nowrap h-full',
-                shouldCenter ? 'mx-auto' : 'pl-2 pr-2'
-              )}
-            >
+            {/* <div
+  ref={toolsContainerRef}
+  className={classNames(
+    'flex items-center whitespace-nowrap h-full',
+    isMobile ? 'gap-1 pl-1 pr-1' : 'gap-2',
+    shouldCenter && !isMobile ? 'mx-auto' : 'pl-2 pr-2'
+  )}
+>
               {Secondary}
               {children}
-            </div>
+            </div> */}
+            <div
+  ref={toolsContainerRef}
+  className={classNames(
+    'flex items-center whitespace-nowrap h-full',
+    isMobile ? 'gap-1 pl-1 pr-1' : 'gap-2',
+    shouldCenter && !isMobile ? 'mx-auto' : 'pl-2 pr-2'
+  )}
+>
+  {Secondary}
+  {children}
+  <div style={{ width: '180px', minWidth: '180px', height: '1px' }}></div>
+</div>
           </div>
 
           <div

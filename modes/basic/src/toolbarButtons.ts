@@ -563,22 +563,38 @@ const toolbarButtons: Button[] = [
     },
   },
   // Window Level
-  {
-    id: 'WindowLevel',
-    uiType: 'ohif.toolButton',
-    props: {
-      icon: 'tool-window-level',
-      label: i18n.t('Buttons:Window Level'),
-      commands: setToolActiveToolbar,
-      evaluate: [
-        'evaluate.cornerstoneTool',
-        {
-          name: 'evaluate.viewport.supported',
-          unsupportedViewportTypes: ['wholeSlide'],
-        },
-      ],
-    },
+  // {
+  //   id: 'WindowLevel',
+  //   uiType: 'ohif.toolButton',
+  //   props: {
+  //     icon: 'tool-window-level',
+  //     label: i18n.t('Buttons:Window Level'),
+  //     commands: setToolActiveToolbar,
+  //     evaluate: [
+  //       'evaluate.cornerstoneTool',
+  //       {
+  //         name: 'evaluate.viewport.supported',
+  //         unsupportedViewportTypes: ['wholeSlide'],
+  //       },
+  //     ],
+  //   },
+  // },
+  ...(window.innerWidth > 768 ? [{
+  id: 'WindowLevel',
+  uiType: 'ohif.toolButton',
+  props: {
+    icon: 'tool-window-level',
+    label: i18n.t('Buttons:Window Level'),
+    commands: setToolActiveToolbar,
+    evaluate: [
+      'evaluate.cornerstoneTool',
+      {
+        name: 'evaluate.viewport.supported',
+        unsupportedViewportTypes: ['wholeSlide'],
+      },
+    ],
   },
+}] : []),
   {
     id: 'Pan',
     uiType: 'ohif.toolButton',
@@ -590,47 +606,88 @@ const toolbarButtons: Button[] = [
       evaluate: 'evaluate.cornerstoneTool',
     },
   },
-  {
-    id: 'Zoom',
-    uiType: 'ohif.toolButton',
-    props: {
-      type: 'tool',
-      icon: 'tool-zoom',
-      label: i18n.t('Buttons:Zoom'),
-      commands: setToolActiveToolbar,
-      evaluate: 'evaluate.cornerstoneTool',
+  // {
+  //   id: 'Zoom',
+  //   uiType: 'ohif.toolButton',
+  //   props: {
+  //     type: 'tool',
+  //     icon: 'tool-zoom',
+  //     label: i18n.t('Buttons:Zoom'),
+  //     commands: setToolActiveToolbar,
+  //     evaluate: 'evaluate.cornerstoneTool',
+  //   },
+  // },
+  ...(window.innerWidth > 768 ? [{
+  id: 'Zoom',
+  uiType: 'ohif.toolButton',
+  props: {
+    type: 'tool',
+    icon: 'tool-zoom',
+    label: i18n.t('Buttons:Zoom'),
+    commands: setToolActiveToolbar,
+    evaluate: 'evaluate.cornerstoneTool',
+  },
+}] : []),
+  // {
+  //   id: 'TrackballRotate',
+  //   uiType: 'ohif.toolButton',
+  //   props: {
+  //     type: 'tool',
+  //     icon: 'tool-3d-rotate',
+  //     label: i18n.t('Buttons:3D Rotate'),
+  //     commands: setToolActiveToolbar,
+  //     evaluate: {
+  //       name: 'evaluate.cornerstoneTool',
+  //       disabledText: i18n.t('Buttons:Select a 3D viewport to enable this tool'),
+  //     },
+  //   },
+  // },
+  ...(window.innerWidth > 768 ? [{
+  id: 'TrackballRotate',
+  uiType: 'ohif.toolButton',
+  props: {
+    type: 'tool',
+    icon: 'tool-3d-rotate',
+    label: i18n.t('Buttons:3D Rotate'),
+    commands: setToolActiveToolbar,
+    evaluate: {
+      name: 'evaluate.cornerstoneTool',
+      disabledText: i18n.t('Buttons:Select a 3D viewport to enable this tool'),
     },
   },
-  {
-    id: 'TrackballRotate',
-    uiType: 'ohif.toolButton',
-    props: {
-      type: 'tool',
-      icon: 'tool-3d-rotate',
-      label: i18n.t('Buttons:3D Rotate'),
-      commands: setToolActiveToolbar,
-      evaluate: {
-        name: 'evaluate.cornerstoneTool',
-        disabledText: i18n.t('Buttons:Select a 3D viewport to enable this tool'),
+}] : []),
+  // {
+  //   id: 'Capture',
+  //   uiType: 'ohif.toolButton',
+  //   props: {
+  //     icon: 'tool-capture',
+  //     label: i18n.t('Buttons:Capture'),
+  //     commands: 'showDownloadViewportModal',
+  //     evaluate: [
+  //       'evaluate.action',
+  //       {
+  //         name: 'evaluate.viewport.supported',
+  //         unsupportedViewportTypes: ['video', 'wholeSlide'],
+  //       },
+  //     ],
+  //   },
+  // },
+  ...(window.innerWidth > 768 ? [{
+  id: 'Capture',
+  uiType: 'ohif.toolButton',
+  props: {
+    icon: 'tool-capture',
+    label: i18n.t('Buttons:Capture'),
+    commands: 'showDownloadViewportModal',
+    evaluate: [
+      'evaluate.action',
+      {
+        name: 'evaluate.viewport.supported',
+        unsupportedViewportTypes: ['video', 'wholeSlide'],
       },
-    },
+    ],
   },
-  {
-    id: 'Capture',
-    uiType: 'ohif.toolButton',
-    props: {
-      icon: 'tool-capture',
-      label: i18n.t('Buttons:Capture'),
-      commands: 'showDownloadViewportModal',
-      evaluate: [
-        'evaluate.action',
-        {
-          name: 'evaluate.viewport.supported',
-          unsupportedViewportTypes: ['video', 'wholeSlide'],
-        },
-      ],
-    },
-  },
+}] : []),
   {
     id: 'Layout',
     uiType: 'ohif.layoutSelector',
