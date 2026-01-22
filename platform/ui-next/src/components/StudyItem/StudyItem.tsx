@@ -253,9 +253,12 @@ const StudyItem = ({
                     className="w-full"
                     asChild
                   >
-                    <div className="text-muted-foreground h-[18px] w-full overflow-hidden truncate whitespace-nowrap text-left">
+                    {/* <div className="text-muted-foreground h-[18px] w-full overflow-hidden truncate whitespace-nowrap text-left">
                       {description}
-                    </div>
+                    </div> */}
+                    <div className="text-muted-foreground h-[18px] w-full overflow-hidden truncate whitespace-nowrap text-left text-[11px]">
+  {description}
+</div>
                   </TooltipTrigger>
                 </Tooltip>
               </div>

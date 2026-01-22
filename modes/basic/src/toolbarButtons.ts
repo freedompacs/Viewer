@@ -563,49 +563,45 @@ const toolbarButtons: Button[] = [
     },
   },
   // Window Level
+  {
+    id: 'WindowLevel',
+    uiType: 'ohif.toolButton',
+    props: {
+      icon: 'tool-window-level',
+      label: i18n.t('Buttons:Window Level'),
+      commands: setToolActiveToolbar,
+      evaluate: [
+        'evaluate.cornerstoneTool',
+        {
+          name: 'evaluate.viewport.supported',
+          unsupportedViewportTypes: ['wholeSlide'],
+        },
+      ],
+    },
+  },
+
   // {
-  //   id: 'WindowLevel',
+  //   id: 'Pan',
   //   uiType: 'ohif.toolButton',
   //   props: {
-  //     icon: 'tool-window-level',
-  //     label: i18n.t('Buttons:Window Level'),
+  //     type: 'tool',
+  //     icon: 'tool-move',
+  //     label: i18n.t('Buttons:Pan'),
   //     commands: setToolActiveToolbar,
-  //     evaluate: [
-  //       'evaluate.cornerstoneTool',
-  //       {
-  //         name: 'evaluate.viewport.supported',
-  //         unsupportedViewportTypes: ['wholeSlide'],
-  //       },
-  //     ],
+  //     evaluate: 'evaluate.cornerstoneTool',
   //   },
   // },
   ...(window.innerWidth > 768 ? [{
-  id: 'WindowLevel',
+  id: 'Pan',
   uiType: 'ohif.toolButton',
   props: {
-    icon: 'tool-window-level',
-    label: i18n.t('Buttons:Window Level'),
+    type: 'tool',
+    icon: 'tool-move',
+    label: i18n.t('Buttons:Pan'),
     commands: setToolActiveToolbar,
-    evaluate: [
-      'evaluate.cornerstoneTool',
-      {
-        name: 'evaluate.viewport.supported',
-        unsupportedViewportTypes: ['wholeSlide'],
-      },
-    ],
+    evaluate: 'evaluate.cornerstoneTool',
   },
 }] : []),
-  {
-    id: 'Pan',
-    uiType: 'ohif.toolButton',
-    props: {
-      type: 'tool',
-      icon: 'tool-move',
-      label: i18n.t('Buttons:Pan'),
-      commands: setToolActiveToolbar,
-      evaluate: 'evaluate.cornerstoneTool',
-    },
-  },
   // {
   //   id: 'Zoom',
   //   uiType: 'ohif.toolButton',

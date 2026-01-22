@@ -294,8 +294,10 @@ const ThumbnailList = ({
               isActive={isActive}
               thumbnailType={componentType}
               viewPreset="thumbnails"
-              onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
-              onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+              // onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+              // onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+              onClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
               onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
               ThumbnailMenuItems={ThumbnailMenuItems}
             />
@@ -329,8 +331,10 @@ const ThumbnailList = ({
                   isActive={isActive}
                   thumbnailType={componentType}
                   viewPreset="thumbnails"
-                  onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
-                  onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+                  // onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+                  // onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+                  onClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
                   onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
                   ThumbnailMenuItems={ThumbnailMenuItems}
                 />
@@ -355,8 +359,8 @@ const ThumbnailList = ({
                   isActive={isActive}
                   thumbnailType={componentType}
                   viewPreset="list"
-                  onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
-                  onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
+                  // onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
+                  // onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
                   onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
                   ThumbnailMenuItems={ThumbnailMenuItems}
                 />
