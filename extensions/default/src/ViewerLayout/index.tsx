@@ -608,9 +608,19 @@ function ViewerLayout({
     };
   }, [panelService, hasPanels]);
 
-  const viewportComponents = viewports.map(getViewportComponentData);
+  // const viewportComponents = viewports.map(getViewportComponentData);
+// if (!viewports || !Array.isArray(viewports) || viewports.length === 0) {
+//   return null;
+// }
 if (!viewports || !Array.isArray(viewports) || viewports.length === 0) {
-  return null;
+  return <div className="fixed inset-0 bg-black" />;
+}
+
+const viewportComponents = viewports.map(getViewportComponentData);
+
+// Additional safety check
+if (!viewportComponents || viewportComponents.length === 0) {
+  return <div className="fixed inset-0 bg-black" />;
 }
   if (isMobile) {
     if (isLandscape) {
