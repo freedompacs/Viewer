@@ -1022,16 +1022,36 @@ function commandsModule({
         }
       }
     },
+    // setToolActiveToolbar: ({ value, itemId, toolName, toolGroupIds = [], bindings }) => {
+    //   // Sometimes it is passed as value (tools with options), sometimes as itemId (toolbar buttons)
+    //   toolName = toolName || itemId || value;
+
+    //   toolGroupIds = toolGroupIds.length ? toolGroupIds : toolGroupService.getToolGroupIds();
+
+    //   toolGroupIds.forEach(toolGroupId => {
+    //     actions.setToolActive({ toolName, toolGroupId, bindings });
+    //   });
+    // },
     setToolActiveToolbar: ({ value, itemId, toolName, toolGroupIds = [], bindings }) => {
-      // Sometimes it is passed as value (tools with options), sometimes as itemId (toolbar buttons)
-      toolName = toolName || itemId || value;
+  toolName = toolName || itemId || value;
+  toolGroupIds = toolGroupIds.length ? toolGroupIds : toolGroupService.getToolGroupIds();
 
-      toolGroupIds = toolGroupIds.length ? toolGroupIds : toolGroupService.getToolGroupIds();
+  toolGroupIds.forEach(toolGroupId => {
+    const toolGroup = toolGroupService.getToolGroup(toolGroupId);
+    if (!toolGroup || !toolGroup.hasTool(toolName)) {
+      return;
+    }
 
-      toolGroupIds.forEach(toolGroupId => {
-        actions.setToolActive({ toolName, toolGroupId, bindings });
-      });
-    },
+    const activeToolName = toolGroup.getActivePrimaryMouseButtonTool();
+
+    // If clicking the same tool that's already active, switch back to StackScroll
+    if (activeToolName === toolName) {
+      actions.setToolActive({ toolName: 'StackScroll', toolGroupId });
+    } else {
+      actions.setToolActive({ toolName, toolGroupId, bindings });
+    }
+  });
+},
     setToolActive: ({
       toolName,
       toolGroupId = null,
