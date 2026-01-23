@@ -659,13 +659,21 @@ if (!viewportComponents || viewportComponents.length === 0) {
           />
         </div>
 
-        <div
+        {/* <div
           className="relative flex flex-col"
           style={{
             height: `calc(100dvh - ${HEADER_HEIGHT + MOBILE_FOOTER_HEIGHT + MOBILE_FOOTER_BORDER}px)`,
             overflow: 'hidden'
           }}
-        >
+        > */}
+<div
+  className="relative flex flex-col"
+  style={{
+    height: `calc(100dvh - ${HEADER_HEIGHT + MOBILE_FOOTER_HEIGHT + MOBILE_FOOTER_BORDER}px)`,
+    overflow: 'hidden'
+  }}
+>
+  {showLoadingIndicator && <LoadingIndicatorProgress className="absolute inset-0 bg-black z-50" />}
           <ResizablePanelGroup
             {...resizablePanelGroupProps}
             key={`mobile-panels-${layoutKey}`}
