@@ -948,6 +948,14 @@ function commandsModule({
         windowCenter: windowLevelPreset.level,
       });
     },
+    setWindowLevelPresetFromDropdown: ({ windowWidth, windowCenter }) => {
+  const { activeViewportId } = viewportGridService.getState();
+  actions.setViewportWindowLevel({
+    viewportId: activeViewportId,
+    windowWidth,
+    windowCenter,
+  });
+},
     getVolumeIdForDisplaySet: ({ viewportId, displaySetInstanceUID }) => {
       const viewport = cornerstoneViewportService.getCornerstoneViewport(viewportId);
       if (viewport instanceof BaseVolumeViewport) {
@@ -2508,6 +2516,9 @@ function commandsModule({
     setWindowLevelPreset: {
       commandFn: actions.setWindowLevelPreset,
     },
+    setWindowLevelPresetFromDropdown: {
+  commandFn: actions.setWindowLevelPresetFromDropdown,
+},
     setToolActive: {
       commandFn: actions.setToolActive,
     },

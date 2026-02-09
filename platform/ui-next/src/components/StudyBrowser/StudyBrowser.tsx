@@ -295,7 +295,8 @@ const StudyBrowser = ({
   viewPresets,
   ThumbnailMenuItems,
   StudyMenuItems,
-}: withAppTypes) => {
+// }: withAppTypes) => {
+}: any) => {
   // ADD THIS: Mobile detection
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -305,21 +306,33 @@ const StudyBrowser = ({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // const getTabContent = () => {
+  //   const tabData = tabs.find(tab => tab.name === activeTabName);
+  //   return tabData?.studies?.map(
+  //     ({ studyInstanceUid, date, description, numInstances, modalities, displaySets }) => {
+  //       return (
   const getTabContent = () => {
-    const tabData = tabs.find(tab => tab.name === activeTabName);
-    return tabData?.studies?.map(
-      ({ studyInstanceUid, date, description, numInstances, modalities, displaySets }) => {
-        return (
+  const tabData = tabs.find(tab => tab.name === activeTabName);
+  return tabData?.studies?.map(
+    ({ studyInstanceUid, date, description, numInstances, modalities, displaySets }) => {
+      const isExpanded = expandedStudyInstanceUIDs.includes(studyInstanceUid);
+
+      return (
           <React.Fragment key={studyInstanceUid}>
             <StudyItem
               date={date}
               description={description}
               numInstances={numInstances}
-              isExpanded={true}
-              displaySets={displaySets}
-              modalities={modalities}
-              isActive={true}
-              onClick={() => {}}
+              // isExpanded={true}
+              // displaySets={displaySets}
+              // modalities={modalities}
+              // isActive={true}
+              // onClick={() => {}}
+              isExpanded={isExpanded}
+            displaySets={displaySets}
+            modalities={modalities}
+            isActive={isExpanded}
+            onClick={() => onClickStudy(studyInstanceUid)}
               onClickThumbnail={onClickThumbnail}
               onDoubleClickThumbnail={onDoubleClickThumbnail}
               onClickUntrack={onClickUntrack}
