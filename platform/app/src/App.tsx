@@ -77,7 +77,56 @@ function App({
 
     run();
   }, []);
+useEffect(() => {
+  if (!init) return;
 
+  // Handle WebGL context errors from multiple tabs
+  const handleError = (event) => {
+    const msg = event.message || event.error?.message || '';
+    if (msg.includes('isAttributeUsed') || msg.includes('setMapperShaderParameters')) {
+      event.preventDefault();
+      console.warn('WebGL context error - too many tabs open. Try closing some OHIF tabs.');
+    }
+  };
+
+  const handleRejection = (event) => {
+    if (event.reason?.message?.includes('isAttributeUsed')) {
+      event.preventDefault();
+      console.warn('WebGL context error - too many tabs open.');
+    }
+  };
+
+  // Release WebGL resources when tab hidden
+  const handleVisibility = () => {
+    if (document.hidden) {
+      try {
+        const canvas = document.querySelector('canvas');
+        if (canvas) {
+          const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+          if (gl) {
+            const ext = gl.getExtension('WEBGL_lose_context');
+            if (ext) {
+              ext.loseContext();
+              setTimeout(() => ext.restoreContext?.(), 100);
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Error managing WebGL:', e);
+      }
+    }
+  };
+
+  window.addEventListener('error', handleError, true);
+  window.addEventListener('unhandledrejection', handleRejection);
+  document.addEventListener('visibilitychange', handleVisibility);
+
+  return () => {
+    window.removeEventListener('error', handleError, true);
+    window.removeEventListener('unhandledrejection', handleRejection);
+    document.removeEventListener('visibilitychange', handleVisibility);
+  };
+}, [init]);
   if (!init) {
     return null;
   }
